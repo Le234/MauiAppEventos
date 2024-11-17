@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="MauiAppEventos.Views.CadastrarEvento"
+             NavigationPage.HasNavigationBar="False"
+             Title="CadastrarEvento">
+    
+    <ScrollView>
+        
+        
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+
+            <Label 
+                Text="CADASTRAR EVENTO"
+                TextColor="DarkBlue"
+                FontSize="Title"
+                HorizontalOptions="Center"/>
+
+            <!-- Nome do Evento -->
+            <Entry x:Name="EntryNomeEvento"
+                   Placeholder="Nome do Evento" />
+
+            <!-- Data de Início -->
+            <DatePicker x:Name="DatePickerInicio"
+                        MinimumDate="{x:Static system:DateTime.Now}" />
+            <!-- Data de Término -->
+            <DatePicker x:Name="DatePickerTermino"
+                        MinimumDate="{Binding Source={x:Static system:DateTime.Now}}" />
+
+            <!-- Número de Participantes -->
+            <Entry x:Name="EntryNumeroParticipantes"
+                   Placeholder="Número de Participantes"
+                   Keyboard="Numeric" />
+
+            <!-- Local do Evento -->
+            <Entry x:Name="EntryLocalEvento"
+                   Placeholder="Local do Evento" />
+
+            <!-- Custo por Participante -->
+            <Entry x:Name="EntryCustoPorParticipante"
+                   Placeholder="Custo por Participante (em R$)"
+                   Keyboard="Numeric" />
+
+            <!-- Botão de Salvar -->
+            <Button Text="Salvar"
+                    BackgroundColor="DarkBlue"
+                    TextColor="White"
+                    Clicked="Button_Clicked_1"/>
+
+
+            <!-- Mensagem de Resultado -->
+            <Label x:Name="LabelResultado"
+                   TextColor="Green"
+                   FontSize="Medium"
+                   IsVisible="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

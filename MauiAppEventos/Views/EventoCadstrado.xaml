@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.EventoCadstrado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="LightBlue"
+             Title="EventoCadstrado">
+
+    
+
+ <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Label 
+            Text="EVENTO CADASTRADO"
+            TextColor="DarkBlue"
+            FontSize="Title"
+            HorizontalOptions="Center"/>
+
+
+        <Frame Margin="20">
+
+            <VerticalStackLayout>
+
+                <Label 
+                       Text=" Evento de : "
+                       FontSize="Subtitle"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding NomeEvento}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+                <Label 
+                       Text=" Dia : "
+                       FontSize="Subtitle"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding DataInicio,StringFormat='{}{0:dd/MM/yyyy}'}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+                <Label 
+                       Text=" Até Dia : " 
+                       FontSize="Subtitle"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding DataTermino,StringFormat='{}{0:dd/MM/yyyy}'}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+                <Label 
+                       Text=" Total de participantes : "
+                       FontSize="Subtitle"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding NumeroParticipantes}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+                <Label
+                          Text=" Local : "
+                          FontSize="Subtitle"
+                          VerticalOptions="Center" 
+                          HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding LocalEvento}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+                <Label 
+                       Text=" Custo por participantes : "
+                       FontSize="Subtitle"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"/>
+                <Label 
+                        Text="{Binding CustoPorParticipante,StringFormat='{}{0:c}'}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Button Text="Voltar" Clicked="Button_Clicked" BackgroundColor="DarkBlue" Margin="20"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
